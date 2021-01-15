@@ -39,12 +39,6 @@ int main(void) {
 		i++;
 	}
 	i = 0x00;
-	TEMP = PINC;
-	while(i<8){
-		counter = GetBit(TEMP, i) + counter;
-		i++;
-	}
-	i = 0x00;
 	PORTC= counter;
 	counter=0x00;
 }
