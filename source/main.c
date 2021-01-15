@@ -24,22 +24,16 @@ int main(void) {
 	
 	unsigned char counter = 0x00;
 	unsigned char i = 0x00;
-	unsigned char TEMP = 0x00;
     /* Insert your solution below */
     while (1) {
-	TEMP = PINA;
 	while(i < 8){
-		counter = GetBit(TEMP, i) + counter;
+		counter = GetBit(PINA, i) + counter;
+		i++;
 	}
 	i = 0x00; //reset i
-	TEMP = PINB;
-	while(i < 8){
-		counter = GetBit(TEMP, i) + counter;
-	}
-	i = 0x00;
-	TEMP = PINC;
 	while(i<8){
-		counter = GetBit(TEMP, i) + counter;
+		counter = GetBit(PINB, i) + counter;
+		i++;
 	}
 	i = 0x00;
 	PORTC= counter;

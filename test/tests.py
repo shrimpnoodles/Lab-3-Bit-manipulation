@@ -15,9 +15,14 @@
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
 tests = [ {'description': 'This test will run first.',
-    'steps': [ {'inputs': [('PINA',0x06)],'iterations': 1},{ 'inputs': [('PINB', 0x0D)],'iterations': 1},{'inputs': [('PINC', 0x01)], 'iterations': 1 } ],
-    'expected': [('PORTC',0x06)],
+    'steps': [ {'inputs': [('PINA',0x0F)],'iterations': 1},{ 'inputs': [('PINB', 0x00)],'iterations': 1}],
+    'expected': [('PORTC',4)],
     },
+	{'description': 'second.',
+    'steps': [ {'inputs': [('PINA',0x0F)],'iterations': 1},{ 'inputs': [('PINB', 0xF0)],'iterations': 1}],
+    'expected': [('PORTC',8)],
+    },
+
     ]
 
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
