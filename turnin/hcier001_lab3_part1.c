@@ -30,16 +30,19 @@ int main(void) {
 	TEMP = PINA;
 	while(i < 8){
 		counter = GetBit(TEMP, i) + counter;
+		i++;
 	}
 	i = 0x00; //reset i
 	TEMP = PINB;
 	while(i < 8){
 		counter = GetBit(TEMP, i) + counter;
+		i++;
 	}
 	i = 0x00;
 	TEMP = PINC;
 	while(i<8){
 		counter = GetBit(TEMP, i) + counter;
+		i++;
 	}
 	i = 0x00;
 	PORTC= counter;
