@@ -26,7 +26,10 @@ int main(void) {
 	unsigned char temp = 0x00;
     /* Insert your solution below */
     while (1) {
-	fuel = PINA;
+	fuel = PINA & 0x0F;
+	if(fuel == 0x00){
+		temp = SetBit(temp, 6, 1); //gas light
+	}
 	if(fuel ==0x01 || fuel==0x02){
 		temp = SetBit(temp, 5, 1);
 		temp = SetBit(temp, 6, 1); //gas light
